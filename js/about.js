@@ -13,7 +13,7 @@ panel.innerHTML = `
   <div class="container about">
 
     <div class="portrait">
-<img src="images/profile/profile.jpeg" alt="プロフィール写真">    </div>
+<img src="images/profile/profile.webp" alt="プロフィール写真">    </div>
 
     <div class="about-info">
       <p class="school">安田女子大学 造形デザイン学科 2028卒見込み</p>

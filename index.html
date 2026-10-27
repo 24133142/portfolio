@@ -20,7 +20,7 @@
   <main class="site-main">
     <section class="container home">
 
-     <p class="home-name en">Aika Yasutomi</p>
+      <p class="home-name en">Aika Yasutomi</p>
 
 
       <h1 class="en">
@@ -34,13 +34,17 @@
 
       <div class="home-cards">
 
-        <!-- 診断へ -->
-        <a href="discover.html" class="home-card red">
+
+
+        <!-- 診断へ（現在準備中） -->
+        <a href="#" class="home-card red" id="discover-preview-trigger">
           <div class="card-top en">DISCOVER</div>
 
           <div class="home-illustration star-illustration">
             <img src="images/ui/starround.svg" class="star-round" alt="">
-            <img src="images/ui/star.svg" class="star-spin" alt="">          </div>
+            <img src="images/ui/star.svg" class="star-spin" alt="">
+          </div>
+
           <div>
             <div class="card-bottom en">
               FIND<br>YOUR ART
@@ -76,6 +80,58 @@
   </footer>
   <script src="js/about.js"></script>
   <script src="js/home.js"></script>
+
+  <!-- 診断ツール：制作中プレビュー -->
+  <div id="discover-preview" class="discover-preview" aria-hidden="true">
+
+    <div class="discover-preview-card" role="dialog" aria-modal="true" aria-labelledby="discover-preview-title"
+      tabindex="-1">
+
+      <!-- 閉じるボタン -->
+      <button type="button" class="discover-preview-close" aria-label="閉じる">×</button>
+
+      <!-- 左側：診断画面の画像 -->
+      <div class="discover-preview-left">
+        <img src="images/profile/preview.webp" alt="制作中の作品診断ツールの画面イメージ">
+        <p class="discover-preview-caption">
+          ※ 画像は開発中の画面イメージです。
+        </p>
+      </div>
+
+      <!-- 右側：制作中の案内 -->
+      <div class="discover-preview-right">
+
+        <p class="discover-preview-label">DISCOVER</p>
+
+        <div class="discover-preview-symbol">✦</div>
+
+        <h2 id="discover-preview-title">COMING SOON</h2>
+
+        <h3>
+          あなたにぴったりの作品を探す、<br>
+          小さな診断ツール。
+        </h3>
+
+        <p class="discover-preview-description">
+          いくつかの質問に答えることで、
+          あなたの興味や感性に合った作品を
+          ご紹介する機能を制作中です。
+        </p>
+
+        <p class="discover-preview-note">
+          現在制作中です。公開までしばらくお待ちください。
+        </p>
+
+        <button type="button" class="discover-preview-back">
+          CLOSE
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+  <script src="js/discover-preview.js"></script>
+
 </body>
 
 </html>
