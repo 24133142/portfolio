@@ -1,0 +1,1090 @@
+
+/* ========================================
+   01. 基本設定
+======================================== */
+
+:root {
+  --green: #32463c;
+  --cream: #eee9d2;
+  --red: #c8624b;
+  --moss: #4f6045;
+
+  --header: 90px;
+  --footer: 38px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--green);
+  font-family: "HGｺﾞｼｯｸE", "Yu Gothic", sans-serif;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.en,
+.site-header,
+.site-footer,
+.pill,
+.next,
+.close,
+.work-title,
+.modal-title {
+  font-family: "Britannic Bold", Georgia, serif;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 3px;
+}
+
+/* ========================================
+   02. ヘッダー・フッター
+======================================== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: var(--header);
+  z-index: 20;
+
+  background: var(--cream);
+  border-bottom: 1px solid #9da99a;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 5%;
+}
+
+.site-header a {
+  font-size: 24px;
+}
+
+.site-header a:hover {
+  text-decoration: underline;
+}
+
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: var(--footer);
+  z-index: 20;
+
+  background: var(--cream);
+  border-top: 1px solid #b6bda9;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 5%;
+  font-size: 12px;
+}
+
+.site-main {
+  min-height: 100vh;
+  padding: var(--header) 0 var(--footer);
+}
+
+.container {
+  width: min(1260px, 88%);
+  margin: auto;
+}
+
+/* ========================================
+   03. HOME
+======================================== */
+
+.home {
+  min-height: calc(
+    100vh - var(--header) - var(--footer)
+  );
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 65px 0;
+}
+
+.home h1 {
+  font-size: clamp(44px, 5vw, 66px);
+  line-height: 1.07;
+  margin: 0 0 8px;
+}
+
+.home-name {
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  margin: 0 0 18px;
+  color: var(--green);
+  font-weight: normal;
+}
+
+.home .tagline {
+  font-size: 24px;
+  margin: 0 0 62px;
+}
+
+.home-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9.5%;
+}
+
+.home-card {
+  height: 360px;
+  color: var(--cream);
+  padding: 30px;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.home-card.red {
+  background: var(--red);
+}
+
+.home-card.green {
+  background: var(--moss);
+}
+
+.card-top {
+  font-size: 24px;
+}
+
+.card-bottom {
+  font-size: 38px;
+  line-height: 1.05;
+}
+
+.ticks {
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-top: 14px;
+}
+
+/* ========================================
+   HOME：大画面で横幅を広げる
+======================================== */
+
+@media (min-width: 1200px) {
+
+  /* HOME全体の横幅を広げる */
+  .container.home {
+    width: 88%;
+    max-width: 1600px;
+  }
+
+  /* カード同士の間隔 */
+  .home-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6%;
+  }
+
+  /* 横長のカードにする */
+  .home-card {
+    height: 360px;
+  }
+
+  /* イラストも画面幅に合わせて少し拡大 */
+  .home-illustration {
+    width: clamp(220px, 18vw, 300px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    right: 8%;
+    top: 15%;
+  }
+
+}
+
+/* ========================================
+   04. ABOUT
+======================================== */
+
+.about {
+  min-height: calc(100vh - var(--header) - var(--footer));
+
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  align-items: center;
+  gap: 90px;
+
+  padding: 75px 0;
+  
+}.portrait {
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 5 / 6;
+  background: #bb8253;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.portrait img {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+.about-info {
+  max-width: 650px;
+}
+
+.school {
+  font-size: 17px;
+  margin: 0 0 14px;
+}
+
+.name {
+  font-size: 42px;
+  font-weight: 400;
+  margin: 0 0 32px;
+}
+
+.name-romaji {
+  font-size: 20px;
+  font-weight: 300;
+  margin: -10px 0 24px;
+}
+
+.bio {
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+
+/* ========================================
+   05. FIND YOUR ART
+======================================== */
+
+.quiz {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+
+  padding: 95px 20px 75px;
+
+  min-height: calc(
+    100vh - var(--header) - var(--footer)
+  );
+}
+
+.section-title {
+  font-size: 38px;
+  margin: 0 0 12px;
+}
+
+.subtitle {
+  font-size: 12px;
+  margin: 0;
+}
+
+.progress {
+  margin: 80px 0 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  font-family: Georgia, serif;
+  font-weight: bold;
+}
+
+.progress .current {
+  color: var(--red);
+}
+
+.progress .line {
+  width: 60px;
+  height: 1px;
+  background: var(--green);
+}
+
+.question {
+  font-size: 20px;
+  margin: 0 0 30px;
+}
+
+.choices {
+  display: grid;
+  gap: 18px;
+  text-align: left;
+}
+
+.choice {
+  min-height: 62px;
+  width: 100%;
+
+  background: transparent;
+  border: 1px solid var(--green);
+  border-radius: 11px;
+  color: var(--green);
+
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
+  padding: 12px 20px;
+  text-align: left;
+}
+
+.choice strong {
+  font-size: 22px;
+}
+
+.choice span {
+  font-size: 14px;
+}
+
+.choice.selected {
+  background: #d9decb;
+  border-width: 2px;
+}
+
+.next {
+  margin: 32px auto 0;
+
+  border: 0;
+  background: var(--moss);
+  color: var(--cream);
+  border-radius: 40px;
+
+  min-width: 180px;
+  padding: 5px 24px;
+  font-size: 27px;
+}
+
+.next:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* 診断結果 */
+
+.result {
+  margin-top: 45px;
+}
+
+.result-image {
+  aspect-ratio: 4 / 3;
+  background: #dba994;
+
+  display: grid;
+  place-items: center;
+
+  margin: 24px auto;
+  max-width: 420px;
+  overflow: hidden;
+}
+
+.secondary-link {
+  background: transparent;
+  border: 1px solid var(--green);
+  border-radius: 20px;
+  color: var(--green);
+
+  padding: 9px 20px;
+  margin-top: 15px;
+}
+
+/* ========================================
+   06. FIND BY SOFTWARE
+======================================== */
+
+.explore {
+  max-width: 1080px;
+  padding: 72px 0 110px;
+}
+
+.explore-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.filters {
+  background: var(--moss);
+  border-radius: 12px;
+
+  padding: 25px 28px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 25px;
+}
+
+.pill {
+  min-width: 115px;
+  padding: 6px 16px;
+
+  border-radius: 30px;
+  border: 1px solid var(--cream);
+
+  color: var(--cream);
+  background: transparent;
+
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.pill.active {
+  background: var(--cream);
+  color: var(--moss);
+}
+
+.works-label {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 30px 0 25px;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 35px 42px;
+}
+
+.work-card {
+  border: 0;
+  background: none;
+  padding: 0;
+
+  text-align: left;
+  color: var(--green);
+  width: 100%;
+}
+
+.work-cover {
+  width: 100%;
+  aspect-ratio: 390 / 345;
+  border-radius: 10px;
+
+  display: grid;
+  place-items: center;
+
+  color: #fff7e7;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+.work-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-title {
+  font-size: 17px;
+  margin: 18px 0 0;
+}
+
+/* ========================================
+   07. 作品詳細モーダル
+======================================== */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(20, 43, 31, 0.83);
+  z-index: 50;
+
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+
+  overflow: auto;
+  padding: 40px 20px;
+}
+
+.overlay.open {
+  display: flex;
+}
+
+.modal-shell {
+  width: min(1000px, 100%);
+  position: relative;
+  padding-top: 44px;
+}
+
+.close {
+  position: sticky;
+  top: 0;
+  float: right;
+
+  margin-top: -44px;
+  margin-bottom: 10px;
+
+  border: 0;
+  background: var(--cream);
+  color: var(--green);
+  border-radius: 30px;
+
+  min-width: 115px;
+  padding: 5px 18px;
+
+  z-index: 2;
+  font-size: 17px;
+}
+
+.modal {
+  clear: both;
+  background: var(--cream);
+  border-radius: 9px;
+  padding: 48px;
+}
+
+.main-photo {
+  aspect-ratio: 822 / 460;
+  border-radius: 8px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--cream);
+  font-size: 15px;
+  overflow: hidden;
+
+  cursor: zoom-in;
+}
+
+.main-photo img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.gallery-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  margin: 18px 0 25px;
+  font-size: 13px;
+}
+
+.arrow {
+  border: 1px solid var(--green);
+  border-radius: 25px;
+  background: transparent;
+  color: var(--green);
+
+  width: 68px;
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+
+/* サムネイルを横一列に表示 */
+.thumbs {
+  display: flex;
+  gap: 25px;
+
+  overflow: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: none;
+}
+
+/* サムネイルの大きさ */
+.thumb {
+  flex: 0 0 calc((100% - 50px) / 3);
+  box-sizing: border-box;
+
+  border: 0;
+  padding: 0;
+  border-radius: 8px;
+
+  overflow: hidden;
+  aspect-ratio: 250 / 205;
+  color: var(--cream);
+}
+
+/* サムネイル画像 */
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 選択中のサムネイル */
+.thumb.active {
+  outline: 3px solid var(--green);
+  outline-offset: -3px;
+}
+
+.category {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 26px 0 8px;
+}
+
+.modal-title {
+  font-size: 32px;
+  margin: 0 0 12px;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 1.9;
+  margin: 0 0 55px;
+}
+
+.tools {
+  border-top: 1px solid #a7ae9e;
+  padding-top: 20px;
+  font-size: 13px;
+}
+
+
+
+/* 動画を表示する枠 */
+#main-photo:has(video) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream) !important;
+  overflow: hidden;
+}
+
+/* 縦長動画を比率を保って表示 */
+#main-photo video {
+  display: block;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: transparent;
+}
+
+/* 動画サムネイル */
+.video-thumb-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--moss);
+  color: var(--cream);
+  font-family: "Britannic Bold", Georgia, serif;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+}
+
+.photo-credit {
+  margin: 8px 0 16px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #777;
+  text-align: right;
+  white-space: pre-line;
+}
+
+/* ========================================
+   08. 画像の拡大表示
+======================================== */
+
+.image-zoom {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  background: rgba(15, 25, 19, 0.94);
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+  cursor: zoom-out;
+}
+
+.image-zoom.open {
+  display: flex;
+}
+
+.zoomed-image {
+  max-width: 95vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.zoom-placeholder {
+  width: min(900px, 90vw);
+  aspect-ratio: 16 / 9;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--cream);
+}
+
+/* ========================================
+   09. スマートフォン対応
+======================================== */
+
+@media (max-width: 760px) {
+
+  :root {
+    --header: 65px;
+    --footer: 34px;
+  }
+
+  .site-header a {
+    font-size: 19px;
+  }
+
+  .site-footer {
+    font-size: 9px;
+  }
+
+  /* HOME */
+
+  .home {
+    padding: 45px 0;
+  }
+
+  .home .tagline {
+    font-size: 16px;
+    margin-bottom: 35px;
+  }
+
+  .home-cards {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+
+  .card-bottom {
+    font-size: 30px;
+  }
+
+  .compass-placeholder {
+    width: 150px;
+    height: 150px;
+    font-size: 75px;
+  }
+
+  /* ABOUT */
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 50px 0;
+  }
+
+  .portrait {
+    max-width: 400px;
+  }
+
+  /* 診断 */
+
+  .quiz {
+    padding-top: 70px;
+  }
+
+  /* 作品一覧 */
+
+  .explore {
+    padding-top: 60px;
+  }
+
+  .filters {
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .pill {
+    min-width: unset;
+  }
+
+  .work-grid {
+    gap: 22px 15px;
+  }
+
+  .work-title {
+    font-size: 14px;
+  }
+
+  /* 作品詳細 */
+
+  .modal {
+    padding: 20px;
+  }
+
+  .thumbs {
+    gap: 10px;
+  }
+
+  .overlay {
+    padding: 14px 10px;
+  }
+
+  .modal-shell {
+    padding-top: 45px;
+  }
+
+  .description {
+    margin-bottom: 30px;
+  }
+}
+
+/* ========================================
+   HOME：スマートフォン用の縦配置
+======================================== */
+
+@media (max-width: 760px) {
+
+  /* カードを縦方向に並べる */
+  .home-card {
+    height: 370px;
+    padding: 25px 28px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  /* 上部タイトル */
+  .card-top {
+    position: relative;
+    z-index: 3;
+    flex-shrink: 0;
+  }
+
+  /* イラストを通常のレイアウトに戻す */
+  .home-illustration {
+    position: relative;
+
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+
+    width: 170px;
+    height: 170px;
+    max-width: none;
+
+    margin: 0 auto;
+    flex-shrink: 0;
+  }
+
+  /* 星とチケットのサイズを統一 */
+  .star-illustration,
+  .ticket-illustration {
+    width: 170px;
+    height: 170px;
+  }
+
+  /* 下部の文字 */
+  .card-bottom {
+    position: relative;
+    z-index: 3;
+    font-size: 30px;
+  }
+
+  .ticks {
+    position: relative;
+    z-index: 3;
+    margin-top: 10px;
+  }
+
+}
+
+
+/* ========================================
+   ABOUT スライドパネル
+======================================== */
+
+.about-panel {
+  position: fixed;
+  top: var(--header);
+  right: 0;
+  bottom: var(--footer);
+  left: 0;
+
+  z-index: 15;
+  background: var(--cream);
+
+  overflow-y: auto;
+
+  transform: translateX(100%);
+  visibility: hidden;
+
+  transition:
+    transform 0.55s cubic-bezier(0.76, 0, 0.24, 1),
+    visibility 0s linear 0.55s;
+}
+
+.about-panel.open {
+  transform: translateX(0);
+  visibility: visible;
+
+  transition:
+    transform 0.55s cubic-bezier(0.76, 0, 0.24, 1),
+    visibility 0s;
+}
+
+/* ABOUTを開いている間の背景スクロール防止 */
+body.about-open {
+  overflow: hidden;
+}
+
+/* ABOUTボタン */
+.site-header .about-active {
+  color: var(--red);
+}
+
+/* ABOUTパネル内のレイアウト */
+.about-panel .about {
+  min-height: 100%;
+}
+
+/* 動きを減らす設定を使っている場合 */
+@media (prefers-reduced-motion: reduce) {
+  .about-panel {
+    transition: none;
+  }
+}
+
+/* イラスト共通 */
+.home-illustration {
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  right: 10%;
+  top: 20%;
+
+  margin: 0;
+  pointer-events: none;
+}
+.home-illustration img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* DISCOVER：外枠は固定、星だけ回転 */
+.star-round {
+  z-index: 1;
+}
+
+/* 星の通常状態 */
+.star-spin {
+  z-index: 2;
+  transform-origin: center;
+  transform: scale(1);
+}
+
+/* ホバー時：拡大と回転を同時に開始 */
+.home-card:hover .star-spin {
+  animation:
+    star-rotation 8s linear infinite,
+    star-grow 1.5s ease-out forwards;
+}
+
+
+/* 120%まで拡大し、その大きさを維持 */
+@keyframes star-grow {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.2;
+  }
+}
+
+@keyframes star-rotation {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* EXPLORE：チケット本体は固定 */
+.ticket-main {
+  z-index: 1;
+}
+
+.ticket-sub {
+  z-index: 2;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+/* ホバー時に半券を少し動かす */
+.home-card:hover .ticket-sub {
+  transform: translate(3px, -4px) rotate(3deg);
+}
+
+/* クリック時に半券がちぎれる */
+.ticket-illustration.tearing .ticket-sub {
+  animation: ticket-tear 0.85s ease-in forwards;
+}
+
+@keyframes ticket-tear {
+  0% {
+    transform: translate(0, 0) rotate(0);
+    opacity: 1;
+  }
+  35% {
+    transform: translate(12px, -10px) rotate(10deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(75px, 100px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star-spin {
+    animation: none;
+  }
+
+  .ticket-illustration.tearing .ticket-sub {
+    animation: none;
+  }
+}

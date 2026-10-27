@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MYNAME | DISCOVER</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <a href="index.html">HOME</a>
+  <a href="#" id="about-toggle"
+     aria-controls="about-panel"
+     aria-expanded="false">ABOUT</a>
+</header>
+
+  <main class="site-main">
+    <section class="quiz">
+
+      <h1 class="section-title en">
+        FIND YOUR ART.
+      </h1>
+
+      <p class="subtitle">
+        あなたの感性に合う私の作品
+      </p>
+
+      <!-- JavaScriptが質問を表示 -->
+      <div id="quiz-content"></div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 MYNAME</span>
+    <span>THE TRAVELING MUSEUM</span>
+  </footer>
+
+  <!-- 作品詳細モーダル -->
+  <div class="overlay"
+       id="overlay"
+       role="dialog"
+       aria-modal="true"
+       aria-label="作品詳細">
+
+    <div class="modal-shell">
+
+      <button class="close" id="close">
+        × CLOSE
+      </button>
+
+      <div class="modal">
+
+        <div class="main-photo"
+             id="main-photo"
+             role="button"
+             tabindex="0"
+             aria-label="画像を拡大">
+        </div>
+
+        <div class="gallery-controls">
+          <button class="arrow" id="prev">〈</button>
+          <span id="photo-count">1 / 3</span>
+          <button class="arrow" id="next-photo">〉</button>
+        </div>
+
+        <div class="thumbs" id="thumbs"></div>
+
+        <p class="category" id="category"></p>
+        <h2 class="modal-title" id="modal-title"></h2>
+        <p class="description" id="description"></p>
+        <div class="tools" id="tools"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 画像拡大用 -->
+  <div class="image-zoom"
+       id="image-zoom"
+       role="dialog"
+       aria-modal="true"
+       aria-label="拡大画像">
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/works.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/discover.js"></script>
+<script src="js/about.js"></script>
+</body>
+</html>

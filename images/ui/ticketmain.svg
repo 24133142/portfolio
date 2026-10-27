@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_13" data-name="レイヤー 13" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 402 402">
+  <g>
+    <path d="M355.504,243.359c-9.02-4.213-15.648-12.932-16.65-23.56-1.002-10.628,3.88-20.433,11.954-26.257l-3.409-36.158-51.784,4.882,11.514,122.134,51.784-4.882-3.409-36.158Z" fill="#32463c"/>
+    <rect x="74.079" y="172.687" width="227.743" height="122.675" transform="translate(-21.135 18.673) rotate(-5.385)" fill="#32463c"/>
+  </g>
+  <g>
+    <rect x="43.076" y="134.267" width="227.743" height="122.675" transform="translate(-73.168 95.904) rotate(-27.832)" fill="#eee9d2"/>
+    <g>
+      <text transform="translate(101.91 238.131) rotate(-27.832)" fill="#4f6045" font-family="BritannicBold, &apos;Britannic Bold&apos;" font-size="40.821" letter-spacing=".029em"><tspan x="0" y="0">TICKET</tspan></text>
+      <text transform="translate(114.127 191.595) rotate(-27.832)" fill="#4f6045" font-family="BritannicBold, &apos;Britannic Bold&apos;" font-size="17.031" letter-spacing=".029em"><tspan x="0" y="0">creation</tspan></text>
+      <text transform="translate(140.748 242.018) rotate(-27.832)" fill="#4f6045" font-family="BritannicBold, &apos;Britannic Bold&apos;" font-size="17.031" letter-spacing=".029em"><tspan x="0" y="0">creation</tspan></text>
+    </g>
+    <path d="M251.572,207.316l-141.761,74.843c-3.911-7.407-13.086-10.242-20.493-6.331l-36.761-69.629c7.407-3.911,10.242-13.086,6.331-20.493l141.761-74.843c3.911,7.407,13.086,10.242,20.493,6.331l36.761,69.629c-7.407,3.911-10.242,13.086-6.331,20.493Z" fill="none" stroke="#4f6045" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>
